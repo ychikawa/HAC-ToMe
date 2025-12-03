@@ -7,7 +7,7 @@ ALGO=tome_LHAC
 RESULT_DIR=./results_${ALGO}/
 R=20
 
-export CUDA_VISIBLE_DEVICES=1,2,3,4
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 mkdir -p "$RESULT_DIR"
 
