@@ -59,7 +59,7 @@ torchrun --nproc_per_node=4 -- main.py \
     --modular
 ```
 
-- **SHAC (single-GPU benchmark example)**
+- **S-HAC (single-GPU benchmark example)**
 
 ```./run/SHAC.sh
 python main.py \
