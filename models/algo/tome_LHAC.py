@@ -83,7 +83,7 @@ class MHSA(nn.Module):
         self.proj = nn.Linear(dim, dim)
         self.proj_drop = nn.Dropout(proj_drop)
         
-        self.diag_scale_net = nn.Sequential(
+        self.scale_net = nn.Sequential(
             nn.BatchNorm1d(1),
             nn.Linear(1, 32),
             nn.ReLU(),
@@ -97,7 +97,7 @@ class MHSA(nn.Module):
         attn = (q @ k.transpose(-2, -1)) * self.scale  # (B, H, T1, T2)
         if size is not None:
             size_ = size.view(B * N, 1)
-            size_ = self.diag_scale_net(size_).view(B, N, self.num_heads)
+            size_ = self.scale_net(size_).view(B, N, self.num_heads)
             size_ = size_.transpose(1, 2)
             attn = attn + size_[:, :, None, :]
         attn = attn.softmax(dim=-1)
