@@ -172,7 +172,7 @@ class VisionTransformer(nn.Module):
         # original network parameter
         params = []
         for n, m in self.named_parameters():
-            if n.find('diag_scale_net') > -1:
+            if n.find('scale_net') > -1:
                 continue
             params.append(m)
         return iter(params)   
@@ -180,8 +180,8 @@ class VisionTransformer(nn.Module):
     def arch_parameters(self):
         params = []
         for block in self.blocks:
-            if hasattr(block.attn, 'diag_scale_net'):
-                params += list(block.attn.diag_scale_net.parameters())
+            if hasattr(block.attn, 'scale_net'):
+                params += list(block.attn.scale_net.parameters())
         total_params = sum(p.numel() for p in params)
         print(f"Total number of architecture parameters: {total_params}")
         return iter(params)  
