@@ -1,4 +1,4 @@
-# Efficient Vision Transformers via Token Merging with Head-Wise Attention Correction
+# [WACV2026] Efficient Vision Transformers via Token Merging with Head-Wise Attention Correction
 
 The Vision Transformers (ViTs) in this repository incorporate Token Merging (ToMe) and the proposed Head-wise Attention Correction (HAC) modules. This repo contains files required to train, fine-tune, and benchmark DeiT/LV-ViT/MAE-style models with ToMe, DiffRate, and related variants.
 
@@ -92,3 +92,18 @@ Adjust `MODEL`, `ALGO`, `R`, and `TGT_FLOPS` as needed.
 - `--benchmark` compiles the model with `torch.compile(mode="reduce-overhead")`, times 200 runs, and appends FLOPs/throughput/Acc@1 to `result/result.txt` (see `main.py`).
 - `run/*.sh` scripts tee stdout to `results_*/{MODEL}_R{R}.txt`.
 - Checkpoints in `--output_dir` are saved as `checkpoint.pth` and can be reloaded with `--resume`.
+
+---
+
+## 7. Citation
+If you use this work in your research, please cite:
+
+```bibtex
+@InProceedings{Ichikawa2026WACV,
+    author    = {Ichikawa, Yuki and Motomura, Masato and Van Chu, Thiem and Fujiki, Daichi},
+    title     = {Efficient Vision Transformers via Token Merging with Head-wise Attention Correction},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {March},
+    year      = {2026},
+    pages     = {3908-3917}
+}
