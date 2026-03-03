@@ -1,5 +1,9 @@
 # [WACV2026] Efficient Vision Transformers via Token Merging with Head-Wise Attention Correction
 
+<p align="center">
+  <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Ichikawa_Efficient_Vision_Transformers_via_Token_Merging_with_Head-wise_Attention_Correction_WACV_2026_paper.pdf">[Paper URL]</a>
+</p>
+
 The Vision Transformers (ViTs) in this repository incorporate Token Merging (ToMe) and the proposed Head-wise Attention Correction (HAC) modules. This repo contains files required to train, fine-tune, and benchmark DeiT/LV-ViT/MAE-style models with ToMe, DiffRate, and related variants.
 
 ---
